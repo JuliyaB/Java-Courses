@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+/**
+ * @author Juliya Bondarenko
+ * @version 0.1
+ */
+
+public class Program {
+
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        float firstNumber = getNumber();
+        float secondNumber = getNumber();
+        operation(firstNumber, secondNumber);
+        scanner.close();
+    }
+
+    /**
+     * This method is used to enter numbers.
+     * @return entered number
+     */
+    public static float getNumber() {
+        System.out.print("Enter the number: ");
+        float number;
+        if (scanner.hasNextFloat()) {
+            number = scanner.nextFloat();
+        } else {
+            System.out.println("An error occurred while entering a number. Try again.");
+            scanner.next();
+            number = getNumber();
+        }
+        return number;
+    }
+
+    /**
+     * In this method, the user enters the operation he wants to carry out with numbers.
+     * The entered value goes through the case, if it matches, it enters the enum Operation and returns the answer from there.
+     * @param firstNumber  first entered number
+     * @param secondNumber second entered number
+     */
+    public static void operation(float firstNumber, float secondNumber) {
+        System.out.print("Enter operation: ");
+        switch (scanner.next().charAt(0)) {
+            case '+':
+                System.out.printf("%f + %f = %.2f", firstNumber, secondNumber, Operation.ADDITION.action(firstNumber, secondNumber));
+                break;
+            case '-':
+                System.out.printf("%f - %f = %.2f", firstNumber, secondNumber, Operation.SUBTRACTION.action(firstNumber, secondNumber));
+                break;
+            case '/':
+                System.out.printf("%f / %f = %.2f", firstNumber, secondNumber, Operation.DIVISION.action(firstNumber, secondNumber));
+                break;
+            case '*':
+                System.out.printf("%f * %f = %.2f", firstNumber, secondNumber, Operation.MULTIPLICATION.action(firstNumber, secondNumber));
+                break;
+            default:
+                break;
+        }
+    }
+
+}
