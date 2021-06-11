@@ -4,15 +4,17 @@ import java.util.Scanner;
  * @author Juliya Bondarenko
  */
 
-public class Program {
+public class Calculator {
 
     static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
-
+    /**
+     * Running a class Calculator.
+     */
+    public static void start() {
         float firstNumber = getNumber();
         float secondNumber = getNumber();
-        System.out.printf("Result: %.2f", operation(firstNumber, secondNumber));
+        System.out.printf("Result: %.4f", operation(firstNumber, secondNumber));
         scanner.close();
     }
 
