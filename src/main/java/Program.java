@@ -13,7 +13,7 @@ public class Program {
 
         float firstNumber = getNumber();
         float secondNumber = getNumber();
-        operation(firstNumber, secondNumber);
+        System.out.printf("Result: %.2f", operation(firstNumber, secondNumber));
         scanner.close();
     }
 
@@ -40,23 +40,19 @@ public class Program {
      * @param firstNumber  first entered number
      * @param secondNumber second entered number
      */
-    public static void operation(float firstNumber, float secondNumber) {
+    public static float operation(float firstNumber, float secondNumber) {
         System.out.print("Enter operation: ");
         switch (scanner.next().charAt(0)) {
             case '+':
-                System.out.printf("%f + %f = %.2f", firstNumber, secondNumber, Operation.ADDITION.action(firstNumber, secondNumber));
-                break;
+                return Operation.ADDITION.action(firstNumber, secondNumber);
             case '-':
-                System.out.printf("%f - %f = %.2f", firstNumber, secondNumber, Operation.SUBTRACTION.action(firstNumber, secondNumber));
-                break;
+                return Operation.SUBTRACTION.action(firstNumber, secondNumber);
             case '/':
-                System.out.printf("%f / %f = %.2f", firstNumber, secondNumber, Operation.DIVISION.action(firstNumber, secondNumber));
-                break;
+                return Operation.DIVISION.action(firstNumber, secondNumber);
             case '*':
-                System.out.printf("%f * %f = %.2f", firstNumber, secondNumber, Operation.MULTIPLICATION.action(firstNumber, secondNumber));
-                break;
+                return Operation.MULTIPLICATION.action(firstNumber, secondNumber);
             default:
-                break;
+                return operation(firstNumber, secondNumber);
         }
     }
 
