@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 /**
  * @author Juliya Bondarenko
- * @version 0.1
  */
 
 public class Program {
@@ -19,6 +18,7 @@ public class Program {
 
     /**
      * This method is used to enter numbers.
+     *
      * @return entered number
      */
     public static float getNumber() {
@@ -37,6 +37,7 @@ public class Program {
     /**
      * In this method, the user enters the operation he wants to carry out with numbers.
      * The entered value goes through the case, if it matches, it enters the enum Operation and returns the answer from there.
+     *
      * @param firstNumber  first entered number
      * @param secondNumber second entered number
      */
