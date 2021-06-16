@@ -1,3 +1,6 @@
+import calculator.Calculator;
+import task_3_2.ArrayWords;
+
 import java.util.Scanner;
 
 /**
@@ -17,7 +20,7 @@ public class Running {
      * User input of selected option.
      */
     public static void input() {
-        System.out.print("1 - Calculator\n" +
+        System.out.print("1 - Calculator.Calculator\n" +
                 "2 - Finding the maximum word in an array\n" +
                 "Enter 1 or 2: ");
         switch (scanner.nextInt()) {

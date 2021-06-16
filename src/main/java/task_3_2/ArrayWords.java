@@ -1,3 +1,5 @@
+package task_3_2;
+
 import java.util.Scanner;
 
 /**
@@ -9,7 +11,7 @@ public class ArrayWords {
     static Scanner scanner = new Scanner(System.in);
 
     /**
-     * Running a class ArrayWords.
+     * Running a class task_3_2.ArrayWords.
      */
     public static void start() {
         System.out.print("Enter the number of words: ");

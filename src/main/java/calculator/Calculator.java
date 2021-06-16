@@ -1,3 +1,5 @@
+package calculator;
+
 import java.util.Scanner;
 
 /**
@@ -9,7 +11,7 @@ public class Calculator {
     static Scanner scanner = new Scanner(System.in);
 
     /**
-     * Running a class Calculator.
+     * Running a class Calculator.Calculator.
      */
     public static void start() {
         float firstNumber = getNumber();
@@ -38,7 +40,7 @@ public class Calculator {
 
     /**
      * In this method, the user enters the operation he wants to carry out with numbers.
-     * The entered value goes through the case, if it matches, it enters the enum Operation and returns the answer from there.
+     * The entered value goes through the case, if it matches, it enters the enum Calculator.Operation and returns the answer from there.
      *
      * @param firstNumber  first entered number
      * @param secondNumber second entered number
