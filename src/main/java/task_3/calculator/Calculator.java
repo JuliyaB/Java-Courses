@@ -1,4 +1,4 @@
-package calculator;
+package task_3.calculator;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ public class Calculator {
     static Scanner scanner = new Scanner(System.in);
 
     /**
-     * Running a class Calculator.Calculator.
+     * Running a class Calculator.
      */
     public static void start() {
         float firstNumber = getNumber();

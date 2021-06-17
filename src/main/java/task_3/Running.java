@@ -1,5 +1,7 @@
-import calculator.Calculator;
-import task_3_2.ArrayWords;
+package task_3;
+
+import task_3.calculator.Calculator;
+import task_3.task_3_2.ArrayWords;
 
 import java.util.Scanner;
 

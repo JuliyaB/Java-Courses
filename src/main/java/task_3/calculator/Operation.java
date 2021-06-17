@@ -1,4 +1,4 @@
-package calculator;
+package task_3.calculator;
 
 public enum Operation {
 

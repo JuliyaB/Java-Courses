@@ -1,3 +1,5 @@
+package task_4.task_4_1;
+
 import java.util.Arrays;
 import java.util.Random;
 
