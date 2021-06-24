@@ -6,30 +6,8 @@ import java.util.Scanner;
 
 public class Running {
 
-    static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
-        input();
-        scanner.close();
+        Calculator.start();
     }
 
-    /**
-     * User input of selected option.
-     */
-    public static void input() {
-        System.out.print("1 - Calculator\n" +
-                "2 - Finding the maximum word in an array\n" +
-                "Enter 1 or 2: ");
-        switch (scanner.nextInt()) {
-            case 1:
-                Calculator.start();
-                break;
-            case 2:
-                ArrayWords.start();
-                break;
-            default:
-                input();
-                break;
-        }
-    }
 }
