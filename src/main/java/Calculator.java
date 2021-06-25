@@ -19,9 +19,10 @@ public class Calculator {
             System.out.print("Enter the number: ");
             float secondNumber = scanner.nextFloat();
             System.out.printf("Result: %.4f", operation(firstNumber, secondNumber));
-            scanner.close();
         }catch (InputMismatchException ex){
             System.out.println("An error occurred while entering a number.");
+        }finally {
+            scanner.close();
         }
     }
 
