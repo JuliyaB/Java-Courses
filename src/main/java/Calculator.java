@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -12,28 +13,16 @@ public class Calculator {
      * Running a class Calculator.
      */
     public static void start() {
-        float firstNumber = getNumber();
-        float secondNumber = getNumber();
-        System.out.printf("Result: %.4f", operation(firstNumber, secondNumber));
-        scanner.close();
-    }
-
-    /**
-     * This method is used to enter numbers.
-     *
-     * @return entered number
-     */
-    public static float getNumber() {
-        System.out.print("Enter the number: ");
-        float number;
-        if (scanner.hasNextFloat()) {
-            number = scanner.nextFloat();
-        } else {
-            System.out.println("An error occurred while entering a number. Try again.");
-            scanner.next();
-            number = getNumber();
+        try {
+            System.out.print("Enter the number: ");
+            float firstNumber = scanner.nextFloat();
+            System.out.print("Enter the number: ");
+            float secondNumber = scanner.nextFloat();
+            System.out.printf("Result: %.4f", operation(firstNumber, secondNumber));
+            scanner.close();
+        }catch (InputMismatchException ex){
+            System.out.println("An error occurred while entering a number.");
         }
-        return number;
     }
 
     /**
