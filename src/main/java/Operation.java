@@ -12,6 +12,9 @@ public enum Operation {
     },
     DIVISION {
         public float action(float firstNumber, float secondNumber) {
+            if (secondNumber==0) {
+                throw new ArithmeticException("You cannot divide by zero!");
+            }
             return firstNumber / secondNumber;
         }
     },
