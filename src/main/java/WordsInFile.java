@@ -15,7 +15,14 @@ public class WordsInFile {
         for (String word : words.keySet()) {
             System.out.println(word + " " + words.get(word));
         }
-        System.out.println("Most recurring word: " + maxWord(words));
+
+        int count = maxWordCount(words);
+        System.out.println("Max count: " + count);
+        System.out.println("Most recurring words: ");
+        ArrayList<String> maxWords = maxWords(words, count);
+        for (String word : maxWords) {
+            System.out.print(word + " ");
+        }
     }
 
     /**
@@ -37,26 +44,41 @@ public class WordsInFile {
                 }
             }
         } catch (IOException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
         return wordAndQuantity;
     }
 
     /**
-     * Search for the most common word and its number
+     * Search for the most common word count
      *
      * @param words collection of words
-     * @return most recurring word and its number
+     * @return most recurring word count
      */
-    public static String maxWord(Map<String, Integer> words) {
-        String maxWord = null;
+    public static int maxWordCount(Map<String, Integer> words) {
         int count = 0;
         for (String word : words.keySet()) {
             if (count < words.get(word)) {
                 count = words.get(word);
-                maxWord = word + " " + count;
             }
         }
-        return maxWord;
+        return count;
+    }
+
+    /**
+     * Search for the list of words by count
+     *
+     * @param words collection of words
+     * @param count encounters in the text
+     * @return all words with so many encounters in the text
+     */
+    public static ArrayList<String> maxWords(Map<String, Integer> words, int count) {
+        ArrayList<String> maxWords = new ArrayList<>();
+        for (String word : words.keySet()) {
+            if (count == words.get(word)) {
+                maxWords.add(word);
+            }
+        }
+        return maxWords;
     }
 }
