@@ -13,17 +13,26 @@ public class Calculator {
      * Running a class Calculator.
      */
     public static void start() {
-        try {
-            System.out.print("Enter the number: ");
-            float firstNumber = scanner.nextFloat();
-            System.out.print("Enter the number: ");
-            float secondNumber = scanner.nextFloat();
-            System.out.printf("Result: %.4f", operation(firstNumber, secondNumber, getOperation()));
-        } catch (InputMismatchException ex) {
-            System.out.println("An error occurred while entering a number.");
-        } finally {
-            scanner.close();
+        float firstNumber = getNumber();
+        float secondNumber = getNumber();
+        System.out.printf("Result: %.4f", operation(firstNumber, secondNumber, getOperation()));
+        scanner.close();
+    }
+
+    /**
+     * This method is used to enter numbers.
+     *
+     * @return entered number
+     */
+    public static float getNumber() {
+        float number;
+        System.out.print("Enter the number: ");
+        if (scanner.hasNextFloat()) {
+            number = scanner.nextFloat();
+        } else {
+            throw new InputMismatchException ("An error occurred while entering a number.");
         }
+        return number;
     }
 
     /**
